@@ -19,3 +19,5 @@ read_pdf.py
 patch_envs*.py
 create_repo.json
 plugged/
+# Terraform binary archive
+terraform_*.zip
