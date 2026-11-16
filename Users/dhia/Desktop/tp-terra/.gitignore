@@ -1,0 +1,13 @@
+# Ignore Terraform state and cache
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+# Python and OS generated files
+__pycache__/
+*.pyc
+.DS_Store
+
+# Word temp files
+~$*.docx
