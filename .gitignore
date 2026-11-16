@@ -1,0 +1,21 @@
+# Ignore Terraform state and cache
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+# Python and OS generated files
+__pycache__/
+*.pyc
+.DS_Store
+
+# Word temp files
+~$*.docx
+
+# Local helpers and nested repos / test dirs
+terraform-cloud-project/
+cred-test/
+read_pdf.py
+patch_envs*.py
+create_repo.json
+plugged/
