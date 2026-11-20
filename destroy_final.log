@@ -1,0 +1,1512 @@
+﻿module.security.data.aws_iam_policy_document.instance_assume: Reading...
+module.compute.data.aws_ami.ubuntu: Reading...
+data.aws_caller_identity.current: Reading...
+module.network.aws_vpc.main: Refreshing state... [id=vpc-026b25ec778eafa1c]
+module.network.aws_eip.nat: Refreshing state... [id=eipalloc-04743f006115cf675]
+module.security.data.aws_iam_policy_document.instance_assume: Read complete after 0s [id=2851119427]
+module.security.aws_iam_role.instance[0]: Refreshing state... [id=cloud5-dev-instance-role]
+data.aws_caller_identity.current: Read complete after 0s [id=326553917564]
+module.storage[0].aws_s3_bucket.main: Refreshing state... [id=cloud5-dev-assets-326553917564]
+module.compute.data.aws_ami.ubuntu: Read complete after 1s [id=ami-016f85f2d6874d3e0]
+module.security.aws_iam_role_policy_attachment.ssm[0]: Refreshing state... [id=cloud5-dev-instance-role-20261120115124356300000001]
+module.security.aws_iam_instance_profile.instance[0]: Refreshing state... [id=cloud5-dev-instance-profile]
+module.network.aws_internet_gateway.main: Refreshing state... [id=igw-00f999b9d46e6c573]
+module.network.aws_subnet.app["0"]: Refreshing state... [id=subnet-060519bc89d150b5e]
+module.network.aws_subnet.app["1"]: Refreshing state... [id=subnet-0a8af33f7d1d936df]
+module.network.aws_subnet.public["1"]: Refreshing state... [id=subnet-0bdec1f0d515a720e]
+module.load_balancer.aws_lb_target_group.app: Refreshing state... [id=arn:aws:elasticloadbalancing:eu-west-1:326553917564:targetgroup/cloud5-dev-tg/9b810b4ed8cb0ccc]
+module.network.aws_subnet.db["1"]: Refreshing state... [id=subnet-0840ad9170a1a863f]
+module.network.aws_subnet.public["0"]: Refreshing state... [id=subnet-0815e3f3083805247]
+module.network.aws_subnet.db["0"]: Refreshing state... [id=subnet-0514b878333a3168a]
+module.security.aws_security_group.alb: Refreshing state... [id=sg-0333153b36f73f2c0]
+module.network.aws_route_table.public: Refreshing state... [id=rtb-0dc42531c12919698]
+module.security.aws_security_group.app: Refreshing state... [id=sg-065e73a38b41b5027]
+module.database[0].aws_db_subnet_group.main: Refreshing state... [id=cloud5-dev-dbsubnetgroup]
+module.network.aws_route_table_association.public["0"]: Refreshing state... [id=rtbassoc-0c429aa564bf978ca]
+module.network.aws_nat_gateway.main: Refreshing state... [id=nat-03c053158a06a2693]
+module.network.aws_route_table_association.public["1"]: Refreshing state... [id=rtbassoc-0923a8f9e12180977]
+module.load_balancer.aws_lb.main: Refreshing state... [id=arn:aws:elasticloadbalancing:eu-west-1:326553917564:loadbalancer/app/cloud5-dev-alb/7e11bb4afa20ee4e]
+module.storage[0].aws_s3_bucket_public_access_block.main: Refreshing state... [id=cloud5-dev-assets-326553917564]
+module.storage[0].aws_s3_bucket_server_side_encryption_configuration.main: Refreshing state... [id=cloud5-dev-assets-326553917564]
+module.storage[0].aws_s3_bucket_lifecycle_configuration.main: Refreshing state... [id=cloud5-dev-assets-326553917564]
+module.storage[0].aws_s3_bucket_versioning.main: Refreshing state... [id=cloud5-dev-assets-326553917564]
+module.security.aws_security_group.db: Refreshing state... [id=sg-030fb503b765141d4]
+module.network.aws_route_table.db: Refreshing state... [id=rtb-04987dd1da5158a76]
+module.network.aws_route_table.app: Refreshing state... [id=rtb-0e177524d9940ad7d]
+module.compute.aws_launch_template.app: Refreshing state... [id=lt-06a87b8f29afc8e2d]
+module.network.aws_route_table_association.db["1"]: Refreshing state... [id=rtbassoc-08fd0fbfdfc0c800d]
+module.network.aws_route_table_association.db["0"]: Refreshing state... [id=rtbassoc-050ad6821db140ebb]
+module.network.aws_route_table_association.app["1"]: Refreshing state... [id=rtbassoc-092c5bd07ac3d39b4]
+module.network.aws_route_table_association.app["0"]: Refreshing state... [id=rtbassoc-07a037d9ab353aac5]
+module.compute.aws_autoscaling_group.app: Refreshing state... [id=cloud5-dev-asg]
+module.load_balancer.aws_lb_listener.http: Refreshing state... [id=arn:aws:elasticloadbalancing:eu-west-1:326553917564:listener/app/cloud5-dev-alb/7e11bb4afa20ee4e/b054336d5728942a]
+module.database[0].aws_db_instance.main: Refreshing state... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # module.compute.aws_autoscaling_group.app will be destroyed
+  - resource "aws_autoscaling_group" "app" {
+      - arn                              = "arn:aws:autoscaling:eu-west-1:326553917564:autoScalingGroup:9b451dc0-3822-4156-99c3-024cef711bc0:autoScalingGroupName/cloud5-dev-asg" -> null
+      - availability_zones               = [
+          - "eu-west-1a",
+          - "eu-west-1b",
+        ] -> null
+      - capacity_rebalance               = false -> null
+      - default_cooldown                 = 300 -> null
+      - default_instance_warmup          = 0 -> null
+      - desired_capacity                 = 2 -> null
+      - enabled_metrics                  = [] -> null
+      - force_delete                     = false -> null
+      - force_delete_warm_pool           = false -> null
+      - health_check_grace_period        = 120 -> null
+      - health_check_type                = "ELB" -> null
+      - id                               = "cloud5-dev-asg" -> null
+      - ignore_failed_scaling_activities = false -> null
+      - load_balancers                   = [] -> null
+      - max_instance_lifetime            = 0 -> null
+      - max_size                         = 2 -> null
+      - metrics_granularity              = "1Minute" -> null
+      - min_size                         = 2 -> null
+      - name                             = "cloud5-dev-asg" -> null
+      - predicted_capacity               = 0 -> null
+      - protect_from_scale_in            = false -> null
+      - service_linked_role_arn          = "arn:aws:iam::326553917564:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling" -> null
+      - suspended_processes              = [] -> null
+      - target_group_arns                = [
+          - "arn:aws:elasticloadbalancing:eu-west-1:326553917564:targetgroup/cloud5-dev-tg/9b810b4ed8cb0ccc",
+        ] -> null
+      - termination_policies             = [] -> null
+      - vpc_zone_identifier              = [
+          - "subnet-060519bc89d150b5e",
+          - "subnet-0a8af33f7d1d936df",
+        ] -> null
+      - wait_for_capacity_timeout        = "10m" -> null
+      - warm_pool_size                   = 0 -> null
+        # (5 unchanged attributes hidden)
+
+      - availability_zone_distribution {
+          - capacity_distribution_strategy = "balanced-best-effort" -> null
+        }
+
+      - capacity_reservation_specification {
+          - capacity_reservation_preference = "default" -> null
+        }
+
+      - instance_refresh {
+          - strategy = "Rolling" -> null
+          - triggers = [] -> null
+
+          - preferences {
+              - auto_rollback                = false -> null
+              - checkpoint_percentages       = [] -> null
+              - max_healthy_percentage       = 100 -> null
+              - min_healthy_percentage       = 50 -> null
+              - scale_in_protected_instances = "Ignore" -> null
+              - skip_matching                = false -> null
+              - standby_instances            = "Ignore" -> null
+                # (2 unchanged attributes hidden)
+            }
+        }
+
+      - launch_template {
+          - id      = "lt-06a87b8f29afc8e2d" -> null
+          - name    = "cloud5-dev-lt-20261120115131963800000002" -> null
+          - version = "$Latest" -> null
+        }
+
+      - tag {
+          - key                 = "Environment" -> null
+          - propagate_at_launch = true -> null
+          - value               = "dev" -> null
+        }
+      - tag {
+          - key                 = "ManagedBy" -> null
+          - propagate_at_launch = true -> null
+          - value               = "Terraform" -> null
+        }
+      - tag {
+          - key                 = "Name" -> null
+          - propagate_at_launch = true -> null
+          - value               = "cloud5-dev-app" -> null
+        }
+      - tag {
+          - key                 = "Owner" -> null
+          - propagate_at_launch = true -> null
+          - value               = "dhiablk" -> null
+        }
+      - tag {
+          - key                 = "Project" -> null
+          - propagate_at_launch = true -> null
+          - value               = "cloud5" -> null
+        }
+
+      - traffic_source {
+          - identifier = "arn:aws:elasticloadbalancing:eu-west-1:326553917564:targetgroup/cloud5-dev-tg/9b810b4ed8cb0ccc" -> null
+          - type       = "elbv2" -> null
+        }
+    }
+
+  # module.compute.aws_launch_template.app will be destroyed
+  - resource "aws_launch_template" "app" {
+      - arn                                  = "arn:aws:ec2:eu-west-1:326553917564:launch-template/lt-06a87b8f29afc8e2d" -> null
+      - default_version                      = 1 -> null
+      - description                          = "Launch template for the web application instances" -> null
+      - disable_api_stop                     = false -> null
+      - disable_api_termination              = false -> null
+      - id                                   = "lt-06a87b8f29afc8e2d" -> null
+      - image_id                             = "ami-016f85f2d6874d3e0" -> null
+      - instance_type                        = "t3.micro" -> null
+      - latest_version                       = 1 -> null
+      - name                                 = "cloud5-dev-lt-20261120115131963800000002" -> null
+      - name_prefix                          = "cloud5-dev-lt-" -> null
+      - security_group_names                 = [] -> null
+      - tags                                 = {} -> null
+      - tags_all                             = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - user_data                            = "IyEvYmluL2Jhc2gKIyBJbnN0YWxscyBhIGxpZ2h0d2VpZ2h0IHdlYiBzZXJ2ZXIgc2hvd2luZyB0aGUgaW5zdGFuY2UgaG9zdG5hbWUuCiMgUmVmcmVzaGluZyB0aGUgQUxCIFVSTCByZXBlYXRlZGx5IHNob3dzIGxvYWQgZGlzdHJpYnV0aW9uIGFjcm9zcyBpbnN0YW5jZXMuCiMgTk9URTogdXNlcyBhcHQgKENhbm9uaWNhbCBVYnVudHUgQU1JKSBiZWNhdXNlIEFXUyBBY2FkZW15IGRlbmllcwojIGVjMjpEZXNjcmliZUltYWdlcywgcHJldmVudGluZyBkeW5hbWljIEFMMjAyMyBBTUkgbG9va3VwLgoKYXB0LWdldCB1cGRhdGUgLXkKYXB0LWdldCBpbnN0YWxsIC15IG5naW54CnN5c3RlbWN0bCBlbmFibGUgLS1ub3cgbmdpbngKCkhPU1Q9JChob3N0bmFtZSkKY2F0ID4gL3Zhci93d3cvaHRtbC9pbmRleC5odG1sIDw8RU9GCjxoMT5UZXJyYWZvcm0gQ2xvdWQgUHJvamVjdDwvaDE+CjxwPkhvc3Q6ICR7SE9TVH08L3A+CkVPRgo=" -> null
+      - vpc_security_group_ids               = [] -> null
+        # (5 unchanged attributes hidden)
+
+      - iam_instance_profile {
+          - name = "cloud5-dev-instance-profile" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - metadata_options {
+          - http_put_response_hop_limit = 0 -> null
+          - http_tokens                 = "required" -> null
+            # (3 unchanged attributes hidden)
+        }
+
+      - network_interfaces {
+          - associate_public_ip_address  = "false" -> null
+          - device_index                 = 0 -> null
+          - ipv4_address_count           = 0 -> null
+          - ipv4_addresses               = [] -> null
+          - ipv4_prefix_count            = 0 -> null
+          - ipv4_prefixes                = [] -> null
+          - ipv6_address_count           = 0 -> null
+          - ipv6_addresses               = [] -> null
+          - ipv6_prefix_count            = 0 -> null
+          - ipv6_prefixes                = [] -> null
+          - network_card_index           = 0 -> null
+          - security_groups              = [
+              - "sg-065e73a38b41b5027",
+            ] -> null
+            # (8 unchanged attributes hidden)
+        }
+
+      - tag_specifications {
+          - resource_type = "instance" -> null
+          - tags          = {
+              - "Environment" = "dev"
+              - "ManagedBy"   = "Terraform"
+              - "Name"        = "cloud5-dev-app"
+              - "Owner"       = "dhiablk"
+              - "Project"     = "cloud5"
+            } -> null
+        }
+    }
+
+  # module.database[0].aws_db_instance.main will be destroyed
+  - resource "aws_db_instance" "main" {
+      - address                               = "cloud5-dev-rds.cxakksgeg6b9.eu-west-1.rds.amazonaws.com" -> null
+      - allocated_storage                     = 20 -> null
+      - apply_immediately                     = false -> null
+      - arn                                   = "arn:aws:rds:eu-west-1:326553917564:db:cloud5-dev-rds" -> null
+      - auto_minor_version_upgrade            = true -> null
+      - availability_zone                     = "eu-west-1a" -> null
+      - backup_retention_period               = 1 -> null
+      - backup_target                         = "region" -> null
+      - backup_window                         = "23:59-00:29" -> null
+      - ca_cert_identifier                    = "rds-ca-rsa2048-g1" -> null
+      - copy_tags_to_snapshot                 = false -> null
+      - customer_owned_ip_enabled             = false -> null
+      - database_insights_mode                = "standard" -> null
+      - db_name                               = "appdb" -> null
+      - db_subnet_group_name                  = "cloud5-dev-dbsubnetgroup" -> null
+      - dedicated_log_volume                  = false -> null
+      - delete_automated_backups              = true -> null
+      - deletion_protection                   = false -> null
+      - domain_dns_ips                        = [] -> null
+      - enabled_cloudwatch_logs_exports       = [] -> null
+      - endpoint                              = "cloud5-dev-rds.cxakksgeg6b9.eu-west-1.rds.amazonaws.com:3306" -> null
+      - engine                                = "mysql" -> null
+      - engine_lifecycle_support              = "open-source-rds-extended-support" -> null
+      - engine_version                        = "8.0" -> null
+      - engine_version_actual                 = "8.0.46-rds.20260908" -> null
+      - hosted_zone_id                        = "Z29XKXDKYMONMX" -> null
+      - iam_database_authentication_enabled   = false -> null
+      - id                                    = "db-SST5I6T3LRRYJVBZG2WRYTB7JM" -> null
+      - identifier                            = "cloud5-dev-rds" -> null
+      - instance_class                        = "db.t3.micro" -> null
+      - iops                                  = 3000 -> null
+      - kms_key_id                            = "arn:aws:kms:eu-west-1:326553917564:key/021e0d66-31a8-4dd8-831c-82135d2c0327" -> null
+      - latest_restorable_time                = "2026-11-20T12:12:36Z" -> null
+      - license_model                         = "general-public-license" -> null
+      - listener_endpoint                     = [] -> null
+      - maintenance_window                    = "thu:03:24-thu:03:54" -> null
+      - master_user_secret                    = [] -> null
+      - max_allocated_storage                 = 0 -> null
+      - monitoring_interval                   = 0 -> null
+      - multi_az                              = false -> null
+      - network_type                          = "IPV4" -> null
+      - option_group_name                     = "default:mysql-8-0" -> null
+      - parameter_group_name                  = "default.mysql8.0" -> null
+      - password                              = (sensitive value) -> null
+      - performance_insights_enabled          = false -> null
+      - performance_insights_retention_period = 0 -> null
+      - port                                  = 3306 -> null
+      - publicly_accessible                   = false -> null
+      - replicas                              = [] -> null
+      - resource_id                           = "db-SST5I6T3LRRYJVBZG2WRYTB7JM" -> null
+      - skip_final_snapshot                   = true -> null
+      - status                                = "available" -> null
+      - storage_encrypted                     = true -> null
+      - storage_throughput                    = 125 -> null
+      - storage_type                          = "gp3" -> null
+      - tags                                  = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-rds"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all                              = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-rds"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - username                              = "dbadmin" -> null
+      - vpc_security_group_ids                = [
+          - "sg-030fb503b765141d4",
+        ] -> null
+        # (14 unchanged attributes hidden)
+    }
+
+  # module.database[0].aws_db_subnet_group.main will be destroyed
+  - resource "aws_db_subnet_group" "main" {
+      - arn                     = "arn:aws:rds:eu-west-1:326553917564:subgrp:cloud5-dev-dbsubnetgroup" -> null
+      - description             = "Managed by Terraform" -> null
+      - id                      = "cloud5-dev-dbsubnetgroup" -> null
+      - name                    = "cloud5-dev-dbsubnetgroup" -> null
+      - subnet_ids              = [
+          - "subnet-0514b878333a3168a",
+          - "subnet-0840ad9170a1a863f",
+        ] -> null
+      - supported_network_types = [
+          - "IPV4",
+        ] -> null
+      - tags                    = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-dbsubnetgroup"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all                = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-dbsubnetgroup"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - vpc_id                  = "vpc-026b25ec778eafa1c" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.load_balancer.aws_lb.main will be destroyed
+  - resource "aws_lb" "main" {
+      - arn                                                          = "arn:aws:elasticloadbalancing:eu-west-1:326553917564:loadbalancer/app/cloud5-dev-alb/7e11bb4afa20ee4e" -> null
+      - arn_suffix                                                   = "app/cloud5-dev-alb/7e11bb4afa20ee4e" -> null
+      - client_keep_alive                                            = 3600 -> null
+      - desync_mitigation_mode                                       = "defensive" -> null
+      - dns_name                                                     = "cloud5-dev-alb-1899151008.eu-west-1.elb.amazonaws.com" -> null
+      - drop_invalid_header_fields                                   = false -> null
+      - enable_cross_zone_load_balancing                             = true -> null
+      - enable_deletion_protection                                   = false -> null
+      - enable_http2                                                 = true -> null
+      - enable_tls_version_and_cipher_suite_headers                  = false -> null
+      - enable_waf_fail_open                                         = false -> null
+      - enable_xff_client_port                                       = false -> null
+      - enable_zonal_shift                                           = false -> null
+      - id                                                           = "arn:aws:elasticloadbalancing:eu-west-1:326553917564:loadbalancer/app/cloud5-dev-alb/7e11bb4afa20ee4e" -> null
+      - idle_timeout                                                 = 60 -> null
+      - internal                                                     = false -> null
+      - ip_address_type                                              = "ipv4" -> null
+      - load_balancer_type                                           = "application" -> null
+      - name                                                         = "cloud5-dev-alb" -> null
+      - preserve_host_header                                         = false -> null
+      - security_groups                                              = [
+          - "sg-0333153b36f73f2c0",
+        ] -> null
+      - subnets                                                      = [
+          - "subnet-0815e3f3083805247",
+          - "subnet-0bdec1f0d515a720e",
+        ] -> null
+      - tags                                                         = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-alb"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all                                                     = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-alb"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - vpc_id                                                       = "vpc-026b25ec778eafa1c" -> null
+      - xff_header_processing_mode                                   = "append" -> null
+      - zone_id                                                      = "Z32O12XQLNTSW2" -> null
+        # (3 unchanged attributes hidden)
+
+      - access_logs {
+          - enabled = false -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - connection_logs {
+          - enabled = false -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - subnet_mapping {
+          - subnet_id            = "subnet-0815e3f3083805247" -> null
+            # (4 unchanged attributes hidden)
+        }
+      - subnet_mapping {
+          - subnet_id            = "subnet-0bdec1f0d515a720e" -> null
+            # (4 unchanged attributes hidden)
+        }
+    }
+
+  # module.load_balancer.aws_lb_listener.http will be destroyed
+  - resource "aws_lb_listener" "http" {
+      - arn                                                                 = "arn:aws:elasticloadbalancing:eu-west-1:326553917564:listener/app/cloud5-dev-alb/7e11bb4afa20ee4e/b054336d5728942a" -> null
+      - id                                                                  = "arn:aws:elasticloadbalancing:eu-west-1:326553917564:listener/app/cloud5-dev-alb/7e11bb4afa20ee4e/b054336d5728942a" -> null
+      - load_balancer_arn                                                   = "arn:aws:elasticloadbalancing:eu-west-1:326553917564:loadbalancer/app/cloud5-dev-alb/7e11bb4afa20ee4e" -> null
+      - port                                                                = 80 -> null
+      - protocol                                                            = "HTTP" -> null
+      - routing_http_response_server_enabled                                = true -> null
+      - tags                                                                = {} -> null
+      - tags_all                                                            = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+        # (11 unchanged attributes hidden)
+
+      - default_action {
+          - order            = 1 -> null
+          - target_group_arn = "arn:aws:elasticloadbalancing:eu-west-1:326553917564:targetgroup/cloud5-dev-tg/9b810b4ed8cb0ccc" -> null
+          - type             = "forward" -> null
+        }
+    }
+
+  # module.load_balancer.aws_lb_target_group.app will be destroyed
+  - resource "aws_lb_target_group" "app" {
+      - arn                                = "arn:aws:elasticloadbalancing:eu-west-1:326553917564:targetgroup/cloud5-dev-tg/9b810b4ed8cb0ccc" -> null
+      - arn_suffix                         = "targetgroup/cloud5-dev-tg/9b810b4ed8cb0ccc" -> null
+      - deregistration_delay               = "300" -> null
+      - id                                 = "arn:aws:elasticloadbalancing:eu-west-1:326553917564:targetgroup/cloud5-dev-tg/9b810b4ed8cb0ccc" -> null
+      - ip_address_type                    = "ipv4" -> null
+      - lambda_multi_value_headers_enabled = false -> null
+      - load_balancer_arns                 = [
+          - "arn:aws:elasticloadbalancing:eu-west-1:326553917564:loadbalancer/app/cloud5-dev-alb/7e11bb4afa20ee4e",
+        ] -> null
+      - load_balancing_algorithm_type      = "round_robin" -> null
+      - load_balancing_anomaly_mitigation  = "off" -> null
+      - load_balancing_cross_zone_enabled  = "use_load_balancer_configuration" -> null
+      - name                               = "cloud5-dev-tg" -> null
+      - port                               = 80 -> null
+      - protocol                           = "HTTP" -> null
+      - protocol_version                   = "HTTP1" -> null
+      - proxy_protocol_v2                  = false -> null
+      - slow_start                         = 0 -> null
+      - tags                               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-tg"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all                           = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-tg"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - target_type                        = "instance" -> null
+      - vpc_id                             = "vpc-026b25ec778eafa1c" -> null
+        # (1 unchanged attribute hidden)
+
+      - health_check {
+          - enabled             = true -> null
+          - healthy_threshold   = 2 -> null
+          - interval            = 30 -> null
+          - matcher             = "200" -> null
+          - path                = "/" -> null
+          - port                = "traffic-port" -> null
+          - protocol            = "HTTP" -> null
+          - timeout             = 5 -> null
+          - unhealthy_threshold = 3 -> null
+        }
+
+      - stickiness {
+          - cookie_duration = 86400 -> null
+          - enabled         = false -> null
+          - type            = "lb_cookie" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - target_failover {}
+
+      - target_group_health {
+          - dns_failover {
+              - minimum_healthy_targets_count      = "1" -> null
+              - minimum_healthy_targets_percentage = "off" -> null
+            }
+          - unhealthy_state_routing {
+              - minimum_healthy_targets_count      = 1 -> null
+              - minimum_healthy_targets_percentage = "off" -> null
+            }
+        }
+
+      - target_health_state {}
+    }
+
+  # module.network.aws_eip.nat will be destroyed
+  - resource "aws_eip" "nat" {
+      - allocation_id            = "eipalloc-04743f006115cf675" -> null
+      - arn                      = "arn:aws:ec2:eu-west-1:326553917564:elastic-ip/eipalloc-04743f006115cf675" -> null
+      - association_id           = "eipassoc-01ee2f9c32b225283" -> null
+      - domain                   = "vpc" -> null
+      - id                       = "eipalloc-04743f006115cf675" -> null
+      - network_border_group     = "eu-west-1" -> null
+      - network_interface        = "eni-09032c28cf0c969d3" -> null
+      - private_dns              = "ip-10-20-1-39.eu-west-1.compute.internal" -> null
+      - private_ip               = "10.20.1.39" -> null
+      - public_dns               = "ec2-18-203-31-186.eu-west-1.compute.amazonaws.com" -> null
+      - public_ip                = "18.203.31.186" -> null
+      - public_ipv4_pool         = "amazon" -> null
+      - tags                     = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-nat-eip"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all                 = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-nat-eip"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - vpc                      = true -> null
+        # (5 unchanged attributes hidden)
+    }
+
+  # module.network.aws_internet_gateway.main will be destroyed
+  - resource "aws_internet_gateway" "main" {
+      - arn      = "arn:aws:ec2:eu-west-1:326553917564:internet-gateway/igw-00f999b9d46e6c573" -> null
+      - id       = "igw-00f999b9d46e6c573" -> null
+      - owner_id = "326553917564" -> null
+      - tags     = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-igw"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-igw"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - vpc_id   = "vpc-026b25ec778eafa1c" -> null
+    }
+
+  # module.network.aws_nat_gateway.main will be destroyed
+  - resource "aws_nat_gateway" "main" {
+      - allocation_id                      = "eipalloc-04743f006115cf675" -> null
+      - association_id                     = "eipassoc-01ee2f9c32b225283" -> null
+      - connectivity_type                  = "public" -> null
+      - id                                 = "nat-03c053158a06a2693" -> null
+      - network_interface_id               = "eni-09032c28cf0c969d3" -> null
+      - private_ip                         = "10.20.1.39" -> null
+      - public_ip                          = "18.203.31.186" -> null
+      - secondary_allocation_ids           = [] -> null
+      - secondary_private_ip_address_count = 0 -> null
+      - secondary_private_ip_addresses     = [] -> null
+      - subnet_id                          = "subnet-0815e3f3083805247" -> null
+      - tags                               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-nat"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all                           = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-nat"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+    }
+
+  # module.network.aws_route_table.app will be destroyed
+  - resource "aws_route_table" "app" {
+      - arn              = "arn:aws:ec2:eu-west-1:326553917564:route-table/rtb-0e177524d9940ad7d" -> null
+      - id               = "rtb-0e177524d9940ad7d" -> null
+      - owner_id         = "326553917564" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - cidr_block                 = "0.0.0.0/0"
+              - nat_gateway_id             = "nat-03c053158a06a2693"
+                # (11 unchanged attributes hidden)
+            },
+        ] -> null
+      - tags             = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-rt-app"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all         = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-rt-app"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - vpc_id           = "vpc-026b25ec778eafa1c" -> null
+    }
+
+  # module.network.aws_route_table.db will be destroyed
+  - resource "aws_route_table" "db" {
+      - arn              = "arn:aws:ec2:eu-west-1:326553917564:route-table/rtb-04987dd1da5158a76" -> null
+      - id               = "rtb-04987dd1da5158a76" -> null
+      - owner_id         = "326553917564" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - cidr_block                 = "0.0.0.0/0"
+              - nat_gateway_id             = "nat-03c053158a06a2693"
+                # (11 unchanged attributes hidden)
+            },
+        ] -> null
+      - tags             = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-rt-db"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all         = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-rt-db"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - vpc_id           = "vpc-026b25ec778eafa1c" -> null
+    }
+
+  # module.network.aws_route_table.public will be destroyed
+  - resource "aws_route_table" "public" {
+      - arn              = "arn:aws:ec2:eu-west-1:326553917564:route-table/rtb-0dc42531c12919698" -> null
+      - id               = "rtb-0dc42531c12919698" -> null
+      - owner_id         = "326553917564" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - cidr_block                 = "0.0.0.0/0"
+              - gateway_id                 = "igw-00f999b9d46e6c573"
+                # (11 unchanged attributes hidden)
+            },
+        ] -> null
+      - tags             = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-rt-public"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all         = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-rt-public"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - vpc_id           = "vpc-026b25ec778eafa1c" -> null
+    }
+
+  # module.network.aws_route_table_association.app["0"] will be destroyed
+  - resource "aws_route_table_association" "app" {
+      - id             = "rtbassoc-07a037d9ab353aac5" -> null
+      - route_table_id = "rtb-0e177524d9940ad7d" -> null
+      - subnet_id      = "subnet-060519bc89d150b5e" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.network.aws_route_table_association.app["1"] will be destroyed
+  - resource "aws_route_table_association" "app" {
+      - id             = "rtbassoc-092c5bd07ac3d39b4" -> null
+      - route_table_id = "rtb-0e177524d9940ad7d" -> null
+      - subnet_id      = "subnet-0a8af33f7d1d936df" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.network.aws_route_table_association.db["0"] will be destroyed
+  - resource "aws_route_table_association" "db" {
+      - id             = "rtbassoc-050ad6821db140ebb" -> null
+      - route_table_id = "rtb-04987dd1da5158a76" -> null
+      - subnet_id      = "subnet-0514b878333a3168a" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.network.aws_route_table_association.db["1"] will be destroyed
+  - resource "aws_route_table_association" "db" {
+      - id             = "rtbassoc-08fd0fbfdfc0c800d" -> null
+      - route_table_id = "rtb-04987dd1da5158a76" -> null
+      - subnet_id      = "subnet-0840ad9170a1a863f" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.network.aws_route_table_association.public["0"] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-0c429aa564bf978ca" -> null
+      - route_table_id = "rtb-0dc42531c12919698" -> null
+      - subnet_id      = "subnet-0815e3f3083805247" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.network.aws_route_table_association.public["1"] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-0923a8f9e12180977" -> null
+      - route_table_id = "rtb-0dc42531c12919698" -> null
+      - subnet_id      = "subnet-0bdec1f0d515a720e" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.network.aws_subnet.app["0"] will be destroyed
+  - resource "aws_subnet" "app" {
+      - arn                                            = "arn:aws:ec2:eu-west-1:326553917564:subnet/subnet-060519bc89d150b5e" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-1a" -> null
+      - availability_zone_id                           = "euw1-az2" -> null
+      - cidr_block                                     = "10.20.11.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-060519bc89d150b5e" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "326553917564" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-app-1"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "private-app"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-app-1"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "private-app"
+        } -> null
+      - vpc_id                                         = "vpc-026b25ec778eafa1c" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.network.aws_subnet.app["1"] will be destroyed
+  - resource "aws_subnet" "app" {
+      - arn                                            = "arn:aws:ec2:eu-west-1:326553917564:subnet/subnet-0a8af33f7d1d936df" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-1b" -> null
+      - availability_zone_id                           = "euw1-az3" -> null
+      - cidr_block                                     = "10.20.12.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0a8af33f7d1d936df" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "326553917564" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-app-2"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "private-app"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-app-2"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "private-app"
+        } -> null
+      - vpc_id                                         = "vpc-026b25ec778eafa1c" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.network.aws_subnet.db["0"] will be destroyed
+  - resource "aws_subnet" "db" {
+      - arn                                            = "arn:aws:ec2:eu-west-1:326553917564:subnet/subnet-0514b878333a3168a" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-1a" -> null
+      - availability_zone_id                           = "euw1-az2" -> null
+      - cidr_block                                     = "10.20.21.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0514b878333a3168a" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "326553917564" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-db-1"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "private-db"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-db-1"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "private-db"
+        } -> null
+      - vpc_id                                         = "vpc-026b25ec778eafa1c" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.network.aws_subnet.db["1"] will be destroyed
+  - resource "aws_subnet" "db" {
+      - arn                                            = "arn:aws:ec2:eu-west-1:326553917564:subnet/subnet-0840ad9170a1a863f" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-1b" -> null
+      - availability_zone_id                           = "euw1-az3" -> null
+      - cidr_block                                     = "10.20.22.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0840ad9170a1a863f" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "326553917564" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-db-2"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "private-db"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-db-2"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "private-db"
+        } -> null
+      - vpc_id                                         = "vpc-026b25ec778eafa1c" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.network.aws_subnet.public["0"] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:eu-west-1:326553917564:subnet/subnet-0815e3f3083805247" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-1a" -> null
+      - availability_zone_id                           = "euw1-az2" -> null
+      - cidr_block                                     = "10.20.1.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0815e3f3083805247" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "326553917564" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-public-1"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "public"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-public-1"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "public"
+        } -> null
+      - vpc_id                                         = "vpc-026b25ec778eafa1c" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.network.aws_subnet.public["1"] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:eu-west-1:326553917564:subnet/subnet-0bdec1f0d515a720e" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-1b" -> null
+      - availability_zone_id                           = "euw1-az3" -> null
+      - cidr_block                                     = "10.20.2.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0bdec1f0d515a720e" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = true -> null
+      - owner_id                                       = "326553917564" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-public-2"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "public"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-public-2"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+          - "Tier"        = "public"
+        } -> null
+      - vpc_id                                         = "vpc-026b25ec778eafa1c" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.network.aws_vpc.main will be destroyed
+  - resource "aws_vpc" "main" {
+      - arn                                  = "arn:aws:ec2:eu-west-1:326553917564:vpc/vpc-026b25ec778eafa1c" -> null
+      - assign_generated_ipv6_cidr_block     = false -> null
+      - cidr_block                           = "10.20.0.0/16" -> null
+      - default_network_acl_id               = "acl-0eea7cb5835567cee" -> null
+      - default_route_table_id               = "rtb-0f406a5875967fedf" -> null
+      - default_security_group_id            = "sg-0448001ed27e94668" -> null
+      - dhcp_options_id                      = "dopt-0ebf8215e09c70c3c" -> null
+      - enable_dns_hostnames                 = true -> null
+      - enable_dns_support                   = true -> null
+      - enable_network_address_usage_metrics = false -> null
+      - id                                   = "vpc-026b25ec778eafa1c" -> null
+      - instance_tenancy                     = "default" -> null
+      - ipv6_netmask_length                  = 0 -> null
+      - main_route_table_id                  = "rtb-0f406a5875967fedf" -> null
+      - owner_id                             = "326553917564" -> null
+      - tags                                 = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-vpc"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all                             = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-vpc"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.security.aws_iam_instance_profile.instance[0] will be destroyed
+  - resource "aws_iam_instance_profile" "instance" {
+      - arn         = "arn:aws:iam::326553917564:instance-profile/cloud5-dev-instance-profile" -> null
+      - create_date = "2026-11-20T11:51:24Z" -> null
+      - id          = "cloud5-dev-instance-profile" -> null
+      - name        = "cloud5-dev-instance-profile" -> null
+      - path        = "/" -> null
+      - role        = "cloud5-dev-instance-role" -> null
+      - tags        = {} -> null
+      - tags_all    = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - unique_id   = "AIPAUYCBBLB6LD5YJTDZL" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.security.aws_iam_role.instance[0] will be destroyed
+  - resource "aws_iam_role" "instance" {
+      - arn                   = "arn:aws:iam::326553917564:role/cloud5-dev-instance-role" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "sts:AssumeRole"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-11-20T11:39:23Z" -> null
+      - description           = "Least-privilege role for application instances" -> null
+      - force_detach_policies = false -> null
+      - id                    = "cloud5-dev-instance-role" -> null
+      - managed_policy_arns   = [
+          - "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
+        ] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "cloud5-dev-instance-role" -> null
+      - path                  = "/" -> null
+      - tags                  = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-instance-role"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all              = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-instance-role"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - unique_id             = "AROAUYCBBLB6LF5JAK2IF" -> null
+        # (2 unchanged attributes hidden)
+    }
+
+  # module.security.aws_iam_role_policy_attachment.ssm[0] will be destroyed
+  - resource "aws_iam_role_policy_attachment" "ssm" {
+      - id         = "cloud5-dev-instance-role-20261120115124356300000001" -> null
+      - policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore" -> null
+      - role       = "cloud5-dev-instance-role" -> null
+    }
+
+  # module.security.aws_security_group.alb will be destroyed
+  - resource "aws_security_group" "alb" {
+      - arn                    = "arn:aws:ec2:eu-west-1:326553917564:security-group/sg-0333153b36f73f2c0" -> null
+      - description            = "Load balancer: accepts HTTP/HTTPS from Internet" -> null
+      - egress                 = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "All outbound"
+              - from_port        = 0
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "-1"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 0
+            },
+        ] -> null
+      - id                     = "sg-0333153b36f73f2c0" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "HTTP from Internet"
+              - from_port        = 80
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 80
+            },
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "HTTPS from Internet"
+              - from_port        = 443
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 443
+            },
+        ] -> null
+      - name                   = "cloud5-dev-alb-sg" -> null
+      - owner_id               = "326553917564" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-alb-sg"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-alb-sg"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - vpc_id                 = "vpc-026b25ec778eafa1c" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.security.aws_security_group.app will be destroyed
+  - resource "aws_security_group" "app" {
+      - arn                    = "arn:aws:ec2:eu-west-1:326553917564:security-group/sg-065e73a38b41b5027" -> null
+      - description            = "Application instances: web traffic only from the ALB" -> null
+      - egress                 = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "All outbound (controlled egress via NAT)"
+              - from_port        = 0
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "-1"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 0
+            },
+        ] -> null
+      - id                     = "sg-065e73a38b41b5027" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = []
+              - description      = "HTTP from ALB security group only"
+              - from_port        = 80
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0333153b36f73f2c0",
+                ]
+              - self             = false
+              - to_port          = 80
+            },
+        ] -> null
+      - name                   = "cloud5-dev-app-sg" -> null
+      - owner_id               = "326553917564" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-app-sg"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-app-sg"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - vpc_id                 = "vpc-026b25ec778eafa1c" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.security.aws_security_group.db will be destroyed
+  - resource "aws_security_group" "db" {
+      - arn                    = "arn:aws:ec2:eu-west-1:326553917564:security-group/sg-030fb503b765141d4" -> null
+      - description            = "Database: connections only from the application security group" -> null
+      - egress                 = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "All outbound"
+              - from_port        = 0
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "-1"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 0
+            },
+        ] -> null
+      - id                     = "sg-030fb503b765141d4" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = []
+              - description      = "MySQL from application security group only"
+              - from_port        = 3306
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-065e73a38b41b5027",
+                ]
+              - self             = false
+              - to_port          = 3306
+            },
+        ] -> null
+      - name                   = "cloud5-dev-db-sg" -> null
+      - owner_id               = "326553917564" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-db-sg"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-db-sg"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - vpc_id                 = "vpc-026b25ec778eafa1c" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.storage[0].aws_s3_bucket.main will be destroyed
+  - resource "aws_s3_bucket" "main" {
+      - arn                         = "arn:aws:s3:::cloud5-dev-assets-326553917564" -> null
+      - bucket                      = "cloud5-dev-assets-326553917564" -> null
+      - bucket_domain_name          = "cloud5-dev-assets-326553917564.s3.amazonaws.com" -> null
+      - bucket_regional_domain_name = "cloud5-dev-assets-326553917564.s3.eu-west-1.amazonaws.com" -> null
+      - force_destroy               = true -> null
+      - hosted_zone_id              = "Z1BKCTXD74EZPE" -> null
+      - id                          = "cloud5-dev-assets-326553917564" -> null
+      - object_lock_enabled         = false -> null
+      - region                      = "eu-west-1" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-assets-326553917564"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+      - tags_all                    = {
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Name"        = "cloud5-dev-assets-326553917564"
+          - "Owner"       = "dhiablk"
+          - "Project"     = "cloud5"
+        } -> null
+        # (3 unchanged attributes hidden)
+
+      - grant {
+          - id          = "382ddfe7579f9ef361e8722e5727cffa629d4962f1a3a226522ebe42cf762fe7" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - lifecycle_rule {
+          - abort_incomplete_multipart_upload_days = 7 -> null
+          - enabled                                = true -> null
+          - id                                     = "archive-and-cleanup" -> null
+          - tags                                   = {} -> null
+            # (1 unchanged attribute hidden)
+
+          - noncurrent_version_expiration {
+              - days = 90 -> null
+            }
+
+          - transition {
+              - days          = 30 -> null
+              - storage_class = "STANDARD_IA" -> null
+                # (1 unchanged attribute hidden)
+            }
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = false -> null
+
+              - apply_server_side_encryption_by_default {
+                  - sse_algorithm     = "aws:kms" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = true -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # module.storage[0].aws_s3_bucket_lifecycle_configuration.main will be destroyed
+  - resource "aws_s3_bucket_lifecycle_configuration" "main" {
+      - bucket                                 = "cloud5-dev-assets-326553917564" -> null
+      - id                                     = "cloud5-dev-assets-326553917564" -> null
+      - transition_default_minimum_object_size = "all_storage_classes_128K" -> null
+        # (1 unchanged attribute hidden)
+
+      - rule {
+          - id     = "archive-and-cleanup" -> null
+          - status = "Enabled" -> null
+            # (1 unchanged attribute hidden)
+
+          - abort_incomplete_multipart_upload {
+              - days_after_initiation = 7 -> null
+            }
+
+          - filter {
+                # (1 unchanged attribute hidden)
+            }
+
+          - noncurrent_version_expiration {
+              - noncurrent_days = 90 -> null
+            }
+
+          - transition {
+              - days          = 30 -> null
+              - storage_class = "STANDARD_IA" -> null
+            }
+        }
+    }
+
+  # module.storage[0].aws_s3_bucket_public_access_block.main will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "main" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "cloud5-dev-assets-326553917564" -> null
+      - id                      = "cloud5-dev-assets-326553917564" -> null
+      - ignore_public_acls      = true -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # module.storage[0].aws_s3_bucket_server_side_encryption_configuration.main will be destroyed
+  - resource "aws_s3_bucket_server_side_encryption_configuration" "main" {
+      - bucket                = "cloud5-dev-assets-326553917564" -> null
+      - id                    = "cloud5-dev-assets-326553917564" -> null
+        # (1 unchanged attribute hidden)
+
+      - rule {
+          - bucket_key_enabled = false -> null
+
+          - apply_server_side_encryption_by_default {
+              - sse_algorithm     = "aws:kms" -> null
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # module.storage[0].aws_s3_bucket_versioning.main will be destroyed
+  - resource "aws_s3_bucket_versioning" "main" {
+      - bucket                = "cloud5-dev-assets-326553917564" -> null
+      - id                    = "cloud5-dev-assets-326553917564" -> null
+        # (1 unchanged attribute hidden)
+
+      - versioning_configuration {
+          - status     = "Enabled" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+Plan: 0 to add, 0 to change, 37 to destroy.
+
+Changes to Outputs:
+  - alb_dns_name      = "cloud5-dev-alb-1899151008.eu-west-1.elb.amazonaws.com" -> null
+  - alb_url           = "http://cloud5-dev-alb-1899151008.eu-west-1.elb.amazonaws.com" -> null
+  - app_subnet_ids    = [
+      - "subnet-060519bc89d150b5e",
+      - "subnet-0a8af33f7d1d936df",
+    ] -> null
+  - asg_name          = "cloud5-dev-asg" -> null
+  - assets_bucket     = "cloud5-dev-assets-326553917564" -> null
+  - db_subnet_ids     = [
+      - "subnet-0514b878333a3168a",
+      - "subnet-0840ad9170a1a863f",
+    ] -> null
+  - public_subnet_ids = [
+      - "subnet-0815e3f3083805247",
+      - "subnet-0bdec1f0d515a720e",
+    ] -> null
+  - rds_endpoint      = "cloud5-dev-rds.cxakksgeg6b9.eu-west-1.rds.amazonaws.com" -> null
+  - vpc_id            = "vpc-026b25ec778eafa1c" -> null
+module.network.aws_route_table_association.db["1"]: Destroying... [id=rtbassoc-08fd0fbfdfc0c800d]
+module.network.aws_route_table_association.public["1"]: Destroying... [id=rtbassoc-0923a8f9e12180977]
+module.storage[0].aws_s3_bucket_server_side_encryption_configuration.main: Destroying... [id=cloud5-dev-assets-326553917564]
+module.storage[0].aws_s3_bucket_versioning.main: Destroying... [id=cloud5-dev-assets-326553917564]
+module.network.aws_route_table_association.db["0"]: Destroying... [id=rtbassoc-050ad6821db140ebb]
+module.network.aws_route_table_association.public["0"]: Destroying... [id=rtbassoc-0c429aa564bf978ca]
+module.security.aws_iam_role_policy_attachment.ssm[0]: Destroying... [id=cloud5-dev-instance-role-20261120115124356300000001]
+module.network.aws_route_table_association.app["1"]: Destroying... [id=rtbassoc-092c5bd07ac3d39b4]
+module.database[0].aws_db_instance.main: Destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM]
+module.compute.aws_autoscaling_group.app: Destroying... [id=cloud5-dev-asg]
+module.storage[0].aws_s3_bucket_server_side_encryption_configuration.main: Destruction complete after 0s
+module.storage[0].aws_s3_bucket_lifecycle_configuration.main: Destroying... [id=cloud5-dev-assets-326553917564]
+module.network.aws_route_table_association.db["0"]: Destruction complete after 0s
+module.network.aws_route_table_association.app["1"]: Destruction complete after 0s
+module.load_balancer.aws_lb_listener.http: Destroying... [id=arn:aws:elasticloadbalancing:eu-west-1:326553917564:listener/app/cloud5-dev-alb/7e11bb4afa20ee4e/b054336d5728942a]
+module.storage[0].aws_s3_bucket_public_access_block.main: Destroying... [id=cloud5-dev-assets-326553917564]
+module.network.aws_route_table_association.db["1"]: Destruction complete after 0s
+module.network.aws_route_table_association.app["0"]: Destroying... [id=rtbassoc-07a037d9ab353aac5]
+module.security.aws_iam_role_policy_attachment.ssm[0]: Destruction complete after 0s
+module.network.aws_route_table.db: Destroying... [id=rtb-04987dd1da5158a76]
+module.network.aws_route_table_association.public["0"]: Destruction complete after 1s
+module.network.aws_route_table_association.public["1"]: Destruction complete after 1s
+module.network.aws_route_table.public: Destroying... [id=rtb-0dc42531c12919698]
+module.storage[0].aws_s3_bucket_lifecycle_configuration.main: Destruction complete after 1s
+module.storage[0].aws_s3_bucket_public_access_block.main: Destruction complete after 1s
+module.load_balancer.aws_lb_listener.http: Destruction complete after 1s
+module.load_balancer.aws_lb.main: Destroying... [id=arn:aws:elasticloadbalancing:eu-west-1:326553917564:loadbalancer/app/cloud5-dev-alb/7e11bb4afa20ee4e]
+module.network.aws_route_table_association.app["0"]: Destruction complete after 1s
+module.storage[0].aws_s3_bucket_versioning.main: Destruction complete after 1s
+module.network.aws_route_table.app: Destroying... [id=rtb-0e177524d9940ad7d]
+module.storage[0].aws_s3_bucket.main: Destroying... [id=cloud5-dev-assets-326553917564]
+module.network.aws_route_table.db: Destruction complete after 1s
+module.storage[0].aws_s3_bucket.main: Destruction complete after 0s
+module.network.aws_route_table.public: Destruction complete after 0s
+module.network.aws_route_table.app: Destruction complete after 1s
+module.network.aws_nat_gateway.main: Destroying... [id=nat-03c053158a06a2693]
+module.database[0].aws_db_instance.main: Still destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM, 10s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 10s elapsed]
+module.load_balancer.aws_lb.main: Still destroying... [id=arn:aws:elasticloadbalancing:eu-west-1:...er/app/cloud5-dev-alb/7e11bb4afa20ee4e, 10s elapsed]
+module.network.aws_nat_gateway.main: Still destroying... [id=nat-03c053158a06a2693, 10s elapsed]
+module.load_balancer.aws_lb.main: Destruction complete after 17s
+module.database[0].aws_db_instance.main: Still destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM, 20s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 20s elapsed]
+module.network.aws_nat_gateway.main: Still destroying... [id=nat-03c053158a06a2693, 20s elapsed]
+module.database[0].aws_db_instance.main: Still destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM, 30s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 30s elapsed]
+module.network.aws_nat_gateway.main: Still destroying... [id=nat-03c053158a06a2693, 30s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 40s elapsed]
+module.database[0].aws_db_instance.main: Still destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM, 40s elapsed]
+module.network.aws_nat_gateway.main: Still destroying... [id=nat-03c053158a06a2693, 40s elapsed]
+module.database[0].aws_db_instance.main: Still destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM, 50s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 50s elapsed]
+module.network.aws_nat_gateway.main: Still destroying... [id=nat-03c053158a06a2693, 50s elapsed]
+module.network.aws_nat_gateway.main: Destruction complete after 51s
+module.network.aws_internet_gateway.main: Destroying... [id=igw-00f999b9d46e6c573]
+module.network.aws_subnet.public["1"]: Destroying... [id=subnet-0bdec1f0d515a720e]
+module.network.aws_eip.nat: Destroying... [id=eipalloc-04743f006115cf675]
+module.network.aws_subnet.public["0"]: Destroying... [id=subnet-0815e3f3083805247]
+module.network.aws_internet_gateway.main: Destruction complete after 1s
+module.network.aws_subnet.public["1"]: Destruction complete after 1s
+module.network.aws_subnet.public["0"]: Destruction complete after 1s
+module.network.aws_eip.nat: Destruction complete after 1s
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 1m0s elapsed]
+module.database[0].aws_db_instance.main: Still destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM, 1m0s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 1m10s elapsed]
+module.database[0].aws_db_instance.main: Still destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM, 1m10s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 1m20s elapsed]
+module.database[0].aws_db_instance.main: Still destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM, 1m20s elapsed]
+module.database[0].aws_db_instance.main: Still destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM, 1m30s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 1m30s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 1m40s elapsed]
+module.database[0].aws_db_instance.main: Still destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM, 1m40s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 1m50s elapsed]
+module.database[0].aws_db_instance.main: Still destroying... [id=db-SST5I6T3LRRYJVBZG2WRYTB7JM, 1m50s elapsed]
+module.database[0].aws_db_instance.main: Destruction complete after 1m52s
+module.database[0].aws_db_subnet_group.main: Destroying... [id=cloud5-dev-dbsubnetgroup]
+module.security.aws_security_group.db: Destroying... [id=sg-030fb503b765141d4]
+module.database[0].aws_db_subnet_group.main: Destruction complete after 0s
+module.network.aws_subnet.db["0"]: Destroying... [id=subnet-0514b878333a3168a]
+module.network.aws_subnet.db["1"]: Destroying... [id=subnet-0840ad9170a1a863f]
+module.security.aws_security_group.db: Destruction complete after 0s
+module.network.aws_subnet.db["0"]: Destruction complete after 1s
+module.network.aws_subnet.db["1"]: Destruction complete after 1s
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 2m0s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 2m10s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 2m20s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 2m30s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 2m40s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 2m50s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 3m0s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 3m10s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 3m20s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 3m30s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 3m40s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 3m50s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 4m0s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 4m10s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 4m20s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 4m30s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 4m40s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 4m50s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 5m0s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 5m10s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 5m20s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 5m30s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 5m40s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 5m50s elapsed]
+module.compute.aws_autoscaling_group.app: Still destroying... [id=cloud5-dev-asg, 6m0s elapsed]
+module.compute.aws_autoscaling_group.app: Destruction complete after 6m1s
+module.network.aws_subnet.app["0"]: Destroying... [id=subnet-060519bc89d150b5e]
+module.network.aws_subnet.app["1"]: Destroying... [id=subnet-0a8af33f7d1d936df]
+module.load_balancer.aws_lb_target_group.app: Destroying... [id=arn:aws:elasticloadbalancing:eu-west-1:326553917564:targetgroup/cloud5-dev-tg/9b810b4ed8cb0ccc]
+module.compute.aws_launch_template.app: Destroying... [id=lt-06a87b8f29afc8e2d]
+module.load_balancer.aws_lb_target_group.app: Destruction complete after 1s
+module.compute.aws_launch_template.app: Destruction complete after 1s
+module.security.aws_iam_instance_profile.instance[0]: Destroying... [id=cloud5-dev-instance-profile]
+module.security.aws_security_group.app: Destroying... [id=sg-065e73a38b41b5027]
+module.network.aws_subnet.app["1"]: Destruction complete after 1s
+module.network.aws_subnet.app["0"]: Destruction complete after 2s
+module.security.aws_security_group.app: Destruction complete after 1s
+module.security.aws_security_group.alb: Destroying... [id=sg-0333153b36f73f2c0]
+module.security.aws_iam_instance_profile.instance[0]: Destruction complete after 1s
+module.security.aws_iam_role.instance[0]: Destroying... [id=cloud5-dev-instance-role]
+module.security.aws_security_group.alb: Destruction complete after 1s
+module.network.aws_vpc.main: Destroying... [id=vpc-026b25ec778eafa1c]
+module.security.aws_iam_role.instance[0]: Destruction complete after 1s
+module.network.aws_vpc.main: Destruction complete after 0s
+
+Destroy complete! Resources: 37 destroyed.
